@@ -48,18 +48,15 @@ def save():
                     "data.json",
                     mode="r",
                 ) as data_file:
-                    # Reading old data
                     data = json.load(data_file)
             except FileNotFoundError:
                 with open(
                     "data.json",
                     mode="w",
                 ) as data_file:
-                    # Write new data to data file
                     json.dump(new_data, data_file, indent=4)
 
             else:
-                # Updating old data with new data- łączę dwa słowniki data i new_data w jedno
                 data.update(new_data)
 
                 with open(
@@ -73,7 +70,7 @@ def save():
                 input_password.delete(0, END)
 
 
-# ---------------------------- FIND PASSWORD  ---------------------------------------#
+# ---------------------------- FIND PASSWORD ------------------------------- #
 def find_password():
     try:
         with open(
@@ -97,7 +94,7 @@ def find_password():
         )
 
 
-# ---------------------------- UI SETUP ----------------------------------------- #
+# ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
 window.title("Password Manager")
